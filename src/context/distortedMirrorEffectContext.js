@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 
 export const DEFAULT_SETTINGS = {
+  time: 0,
   image: "https://images.unsplash.com/photo-1494697536454-6f39e2cc972d",
   timeFactor: 0.000005,
   timeOffset: 0.57,
@@ -20,6 +21,7 @@ export const DistortedMirrorEffectSettingsContext = React.createContext({});
 
 export const DistortedMirrorEffectSettingsContextProvider = ({ children }) => {
   const [image, setImage] = useState(DEFAULT_SETTINGS.image);
+  const [time, setTime] = useState(DEFAULT_SETTINGS.time);
   const [timeFactor, setTimeFactor] = useState(DEFAULT_SETTINGS.timeFactor);
   const [timeOffset, setTimeOffset] = useState(DEFAULT_SETTINGS.timeOffset);
   const [imageOffsetFactor1, setImageOffsetFactor1] = useState(
@@ -50,6 +52,8 @@ export const DistortedMirrorEffectSettingsContextProvider = ({ children }) => {
       value={{
         image,
         setImage,
+        time,
+        setTime,
         timeFactor,
         setTimeFactor,
         timeOffset,
